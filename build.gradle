@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'war'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+
+project.ext {
+    slf4j_version = '1.7.25'
+    keycloak_version = '11.0.2' 
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.slf4j:slf4j-api:${slf4j_version}"
+    implementation "org.keycloak:keycloak-server-spi:${keycloak_version}"
+    implementation "org.keycloak:keycloak-core:${keycloak_version}"
+
+    implementation "com.h2database:h2:1.4.197"
+}
